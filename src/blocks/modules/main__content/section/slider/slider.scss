@@ -1,0 +1,246 @@
+@import "main-bx";
+
+.slider {
+	padding-bottom: 60px;
+	position: relative;
+	&__pseudo_left,
+	&__pseudo_right {
+		display: block;
+		position: absolute;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		bottom: 0;
+		z-index: -1;
+	}
+	&__pseudo_left {
+		width: 780px;
+		height: 290px;
+		left: 0;
+		bottom: 14%;
+	}
+	&__pseudo_right {
+		right: 0;
+		bottom: 40%;
+		width: 676px;
+		height: 500px;
+	}
+	@include from-to($tablet, $laptop) {
+		padding-bottom: 50px;
+	}
+	@include to($tablet) {
+		&::after {
+			right: -5%;
+		}
+		&::before {
+			left: -30%;
+			bottom: 25%;
+		}
+	}
+	@include to($mobile) {
+		&::after {
+			right: -165%;
+		}
+		&::before {
+			left: -5%;
+			bottom: 0;
+		}
+	}
+	&__flipster_img {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+	&__flipster_description {
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		display: flex;
+		flex-direction: column;
+		background-color: rgba(255, 253, 245, 0.85);
+		padding: 20px 20px 12px;
+		@include to($tablet) {
+			position: relative;
+			background-color: rgba(255, 253, 245, 0.95);
+			bottom: 5px;
+		}
+		span {
+			&:nth-child(1) {
+				font-family: $font-bold;
+				margin-bottom: 10px;
+			}
+		}
+	}
+}
+
+.flipster {
+	display: grid;
+	overflow: visible;
+	grid-template-areas:
+		"container container container "
+		"prev nav next";
+	grid-template-rows: repeat(2, minmax(20px, auto));
+	grid-template-columns: 1fr auto 1fr;
+
+	&__container {
+		width: 100%;
+		margin-bottom: 15px;
+		grid-area: container;
+		justify-self: center;
+
+		@include to($mobile) {
+			max-width: 737px;
+		}
+	}
+	&__item__content {
+		width: 960px;
+		height: 100%;
+		filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.15));
+		@include from-to($tablet, $laptop) {
+			width: 515px;
+		}
+		@include to($tablet) {
+			width: 430px;
+		}
+		@include to($mobile) {
+			width: 90vw;
+		}
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 40px;
+		margin-right: 15px;
+		margin-bottom: 0;
+		margin-left: 15px;
+		grid-area: nav;
+		justify-self: center;
+
+		&__item {
+			flex: 0 0 8px;
+			width: 8px;
+			height: 8px;
+			margin: 0;
+			margin-right: 6px;
+			border-radius: 50%;
+			background-color: $blue-color;
+			cursor: pointer;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&--current {
+				background-color: $white-color;
+			}
+		}
+
+		&__link {
+			display: block;
+			height: 100%;
+			font-size: 0;
+
+			&::after {
+				display: none;
+			}
+		}
+	}
+
+	&__button {
+		position: relative;
+		top: auto;
+		flex: 0 0 40px;
+		width: 40px;
+		height: 40px;
+		font-size: 0;
+		line-height: 0;
+		border: 1px solid $blue-color;
+		border-radius: 50%;
+		background-color: transparent;
+		box-shadow: none;
+		cursor: pointer;
+		outline: none;
+
+		&:active {
+			opacity: 0.5;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 10px;
+			height: 10px;
+			border-top: 1px solid $blue-color;
+			border-right: 1px solid $blue-color;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__button--prev {
+		margin-left: auto;
+		grid-area: prev;
+		justify-self: center;
+
+		&::before {
+			transform: translate(-25%, -50%) rotate(-135deg);
+		}
+	}
+
+	&__button--next {
+		margin-right: auto;
+		grid-area: next;
+		justify-self: center;
+
+		&::before {
+			transform: translate(-75%, -50%) rotate(45deg);
+		}
+	}
+
+	&__item {
+		@include to($laptop) {
+			// transform: none !important;
+		}
+
+		&:not(.flipster__item--current) {
+			@include to($mobile) {
+				transform: translateY(0px) !important;
+			}
+		}
+
+		&--past-1 {
+			transform: translate(200px, 30px) scale(0.7);
+			opacity: 1 !important;
+			@include to($laptop) {
+				transform: translate(40px, 30px) scale(0.7);
+			}
+		}
+
+		&--past-2 {
+			opacity: 1 !important;
+			transform: translate(315px, 20px) scale(0.6);
+			@include to($laptop) {
+				transform: translate(90px, 20px) scale(0.6);
+			}
+		}
+
+		&--future-1 {
+			opacity: 1 !important;
+			transform: translate(-200px, 30px) scale(0.7);
+			@include to($laptop) {
+				transform: translate(-40px, 30px) scale(0.7);
+			}
+		}
+
+		&--future-2 {
+			opacity: 1 !important;
+			transform: translate(-315px, 20px) scale(0.6);
+			@include to($laptop) {
+				transform: translate(-90px, 20px) scale(0.6);
+			}
+		}
+	}
+}
