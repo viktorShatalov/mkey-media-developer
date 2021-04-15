@@ -1,0 +1,233 @@
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  transition: .3s ease-in-out;
+  background-color: rgba(0,0,0,.6);
+  visibility: hidden;
+  opacity: 0;
+  overflow-y: scroll;
+  overflow-x: hidden
+}
+.modal.active {
+  opacity: 1;
+  visibility: visible
+}
+.modal__body_form p {
+  position: relative
+}
+.modal__body_title {
+  font-size: 28px;
+  display: block;
+  margin-bottom: 30px;
+  color: #454545
+}
+.modal__body_title_text {
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  letter-spacing: .8px;
+  margin-bottom: 25px
+}
+.modal__content {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 10px
+}
+.modal__content_body {
+  background-color: #fff;
+  border-radius: 3px;
+  padding: 20px;
+  position: relative;
+  width: 100%;
+  max-width: 480px
+}
+.close-button {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  cursor: pointer;
+  width: 32px;
+  height: 32px
+}
+.close-button::after,
+.close-button::before {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #00488a
+}
+.close-button::before {
+  transform: rotate(45deg)
+}
+.close-button::after {
+  transform: rotate(-45deg)
+}
+.form__control_input {
+  display: block;
+  width: 100%;
+  background-color: #f6f8fb;
+  border-radius: 4px;
+  border: none;
+  outline: 0;
+  padding: 8px;
+  color: #000;
+  font-family: GothamPro;
+  font-size: 18px;
+  margin-bottom: 24px
+}
+.form__control_input::-moz-placeholder {
+  color: #000;
+  font-family: GothamPro;
+  font-size: inherit
+}
+.form__control_input:-ms-input-placeholder {
+  color: #000;
+  font-family: GothamPro;
+  font-size: inherit
+}
+.form__control_input::placeholder {
+  color: #000;
+  font-family: GothamPro;
+  font-size: inherit
+}
+.form__control_input.select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url(../img/awesome/arrow__bottom.png);
+  background-repeat: no-repeat;
+  background-position: center right 15px
+}
+.form__control_input.valid {
+  background-color: #fff;
+  background-image: url(../img/awesome/checked_valid.png);
+  background-repeat: no-repeat;
+  background-position: center right 15px
+}
+.form__control_checkbox {
+  display: inline-block;
+  padding-left: 45px;
+  margin-bottom: 50px
+}
+.form__control_checkbox input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0
+}
+.form__control_checkbox input + label::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid #9b9b9b;
+  background-color: #fff;
+  left: -30px;
+  top: 5px
+}
+.form__control_checkbox input:checked + label::after {
+  content: url(../img/awesome/checked.png);
+  position: absolute;
+  display: block;
+  width: 11px;
+  height: 7px;
+  left: -27px;
+  top: 8px
+}
+.form__control_checkbox label {
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  font-size: 16px;
+  color: #9b9b9b
+}
+.form__control_checkbox label a {
+  color: #00488a
+}
+.form__control_btn {
+  width: 100%;
+  display: block;
+  padding: 8px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-family: Alegreya-Bold;
+  letter-spacing: .8px;
+  color: #fff;
+  background-color: #d80e15;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: .3s ease-in-out
+}
+.form__control_btn:hover {
+  background-color: #c0171c
+}
+.form__control_valid.error,
+.form__control_valid.valid {
+  position: absolute;
+  font-size: 14px;
+  border: 1px solid #d80e15;
+  padding: 3px;
+  left: 0;
+  bottom: -25px;
+  color: #d80e15;
+  display: block;
+  width: 100%;
+  text-align: center
+}
+.form__control_valid.valid {
+  border: 1px solid green;
+  color: green
+}
+.form__section_title {
+  font-size: 18px;
+  font-family: Alegreya-Black;
+  color: #454545;
+  font-weight: 900;
+  display: inline-block;
+  margin-bottom: 30px;
+  text-transform: uppercase
+}
+.choices__list--dropdown {
+  box-shadow: 0 2px 4px rgba(0,0,0,.25),0 16px 32px rgba(0,0,0,.1);
+  border: none
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+  background-color: #f6f8fb
+}
+.choices__list--dropdown .choices__item {
+  border-bottom: 1px solid rgba(222,223,226,.644);
+  font-family: GothamPro
+}
+.choices[data-type*=select-one]:after {
+  background-image: url(../img/awesome/arrow__bottom.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  height: 8px;
+  width: 14px;
+  border: none
+}
+.choices[data-type*=select-one].is-open:after {
+  margin-top: -2.5px
+}
+.choices__list--single {
+  padding: 0
+}
+.choices__placeholder {
+  opacity: 1
+}
