@@ -1,16 +1,70 @@
 <header class="header" style="background-image: url(img/bg/header_bg.webp);" data-bg-webp="img/bg/header_bg.webp"
     data-bg="img/bg/header_bg.png">
     <div class="header__top">
-        <picture>
-            <source type="image/webp" srcset="img/header/logo.webp" >
-            <source type="image/png" srcset="img/header/logo.png">
-            <img src="img/header/logo.png" alt="logo" loading="lazy" width="174" height="62">
+        <picture class="header__top-logo">
+            <source type="image/webp" srcset="img/header/logo.webp">
+            <img src="img/header/logo.png" alt="logo" loading="lazy" width="180" height="60">
         </picture>
         <div class="header__burger"><span></span></div>
     </div>
-    <picture class="header__center-img">
-        <source type="image/webp" srcset="img/header/DEV.webp">
-        <source type="image/png" srcset="img/header/DEV.png">
-        <img src="img/header/DEV.png" alt="dev" loading="lazy">
-    </picture>
+    <div class="header__center">
+        <div class="header__center-left">
+            <picture>
+                <source type="image/webp" srcset="img/header/logo_big.webp">
+                <img src="img/header/logo_big.png" alt="logo" loading="lazy" width="560" height="210">
+            </picture>
+        </div>
+        <div class="header__center-arrow">
+            <a href="" class="arrow-conteiner">
+                <picture>
+                    <source type="image/webp" srcset="img/awesome/right-arrow.webp">
+                    <img src="img/awesome/right-arrow.png" alt="arrow_down" loading="lazy">
+                </picture>
+            </a>
+        </div>
+        <div class="header__center-right">
+            <div class="header__social">
+                <ul>
+                    <li><a href="">
+                            <picture>
+                                <source type="image/webp" srcset="img/awesome/facebook.webp">
+                                <img src="img/awesome/facebook.png" loading="lazy" alt="img">
+                            </picture>
+                        </a></li>
+                    <li><a href="">
+                            <picture>
+                                <source type="image/webp" srcset="img/awesome/linkedin.webp">
+                                <img src="img/awesome/linkedin.png" loading="lazy" alt="img">
+                            </picture>
+                        </a></li>
+                    <li><a href="">
+                            <picture>
+                                <source type="image/webp" srcset="img/awesome/instagram.webp">
+                                <img src="img/awesome/instagram.png" loading="lazy" alt="img">
+                            </picture>
+                        </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="header__bottom">
+        <div class="header__bottom-line">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="header__bottom-text">Sound <span class="text-chenge">Off</span></div>
+    </div>
+    <div class="header__menu">
+        <nav class="header__menu_navigation">
+            <ul>
+                <li><a href="">О нас</a></li>
+                <li><a href="">Новости</a></li>
+                <li><a href="">Услуги</a></li>
+                <li><a href="">Партнеры</a></li>
+                <li><a href="">Контакты</a></li>
+            </ul>
+        </nav>
+        <div class="header__menu-right"></div>
+    </div>
 </header>

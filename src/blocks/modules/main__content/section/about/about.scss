@@ -1,307 +1,178 @@
 @import "main-bx";
 
 .about {
-    color: $white-color;
+    position: relative;
+    padding: 435px 60px 123px;
     display: flex;
-    flex-wrap: nowrap;
-    position: relative;
-    padding: 60px 0 33px;
-    margin-bottom: 60px;
-    @include from-to($tablet, $laptop) {
-        margin-bottom: 6px;
-        background-size: 63%;
-    }
-    @include to($tablet) {
-        padding-top: 35px;
-    }
-    @include to($mobile) {
-        flex-wrap: wrap;
-        flex-direction: column-reverse;
-        padding-top: 20px;
-    }
-    &__left {
-        flex: 0 0 54%;
-        margin-left: 9.4%;
-        margin-right: 40px;
-        letter-spacing: 0.07em;
-        height: 100%;
-        @include from-to($tablet, $laptop) {
-            margin-left: 20px;
-            flex: 0 0 52%;
-        }
-        @include to($tablet) {
-            margin-left: 0px;
-            margin-right: 0px;
-            flex: 0 0 50%;
-        }
-        @include to($mobile) {
-            margin-left: 0px;
-            margin-right: 0px;
-            flex: 0 0 100%;
-        }
-        &_text {
-            height: 810px;
-            overflow-y: hidden;
-            transition: height 0.3s ease-in-out;
-            &.active {
-                height: 100%;
-            }
-            @include to($mobile) {
-                height: 632px;
-            }
-        }
-        p {
-            margin-bottom: 9px;
-            letter-spacing: 0;
-            line-height: 1.25;
-            @include from-to($tablet, $laptop) {
-                line-height: 1.2;
-                margin-bottom: 8px;
-            }
-        }
-        &_top {
-            text-transform: uppercase;
-            letter-spacing: unset !important;
-            margin-bottom: 17px !important;
-            @include from-to($tablet, $laptop) {
-                margin-bottom: 21px !important;
-                letter-spacing: 0.07em !important;
-            }
-        }
-        &_show__more {
-            margin-top: 40px;
-            text-transform: uppercase;
-            color: $blue-color;
-            background-color: $white-color;
-            font-size: 18px;
-            font-weight: 500;
-            padding: 10px 0;
-            width: 100%;
-            max-width: 201px;
-            border-radius: 4px;
-            display: block;
-            cursor: pointer;
-            text-align: center;
-            letter-spacing: 0.5px;
-            @include transition;
-            @include from-to($tablet, $laptop) {
-                margin-top: 45px;
-            }
-            @include to($mobile) {
-                margin-top: 18px;
-            }
-            &:hover {
-                opacity: 0.9;
-            }
-        }
-    }
-    &__right {
+    flex-direction: column;
+    justify-content: space-between;
+    h2 {
+        position: relative;
+        color: $about-white-text;
+        text-align: center;
+        line-height: 1.4;
+        font-size: 72px;
+        font-family: $font-bold;
+        z-index: 1;
+        max-width: 835px;
         width: 100%;
-        max-width: 32%;
+        margin: 0 auto;
+        text-transform: uppercase;
+    }
+    &.white-bg {
+        background-color: $about-white-bg;
+        h2,
+        a {
+            color: $about-white-text;
+        }
+    }
+    &.black-bg {
+        background-color: $about-white-text;
+        h2,
+        a {
+            color: $about-white-bg;
+        }
+        .about__pdeudo-bg span {
+            color: rgb(26, 26, 26);
+        }
+    }
+    &.show {
+        h2 {
+            margin-bottom: 232px;
+        }
+    }
+    &.do-not {
+        padding: 480px 60px 122px;
+        h2 {
+            margin-bottom: 284px;
+        }
+    }
+    &.recognize {
+        padding: 480px 60px 122px;
+        h2 {
+            margin-bottom: 295px;
+        }
+    }
+    &.love {
+        padding: 480px 60px 122px;
+        h2 {
+            margin-bottom: 290px;
+        }
+    }
+    &.reach {
+        padding: 487px 60px 122px;
+        h2 {
+            margin-bottom: 279px;
+        }
+    }
+    &__line {
         position: absolute;
-        right: 20px;
-        top: -185px;
-        @include to($laptop) {
-            right: 2%;
-            top: -260px;
+        z-index: 1;
+        &.left {
+            left: 60px;
+            top: 50px;
         }
-        @include to($tablet) {
-            max-width: 39%;
-            right: 0%;
-            top: -165px;
+        &.right {
+            top: -205px;
+            right: 60px;
         }
-        @include to($mobile) {
-            position: relative;
-            right: 0;
-            top: 0;
-            margin-bottom: 21px;
-            max-width: 100%;
-        }
-
-        &_top {
-            position: relative;
-            z-index: 1;
-        }
-        &_btn {
-            border-radius: 2px;
-            background-color: $white-color;
-            border: 5px solid $white-color;
-            margin-bottom: 116px;
-            @include from-to($tablet, $laptop) {
-                margin-bottom: 45px;
-            }
-            @include to($mobile) {
-                margin-bottom: 20px;
-            }
-        }
-        &_btn_top {
-            button {
-                background-color: $red-color;
-                text-align: center;
-                font-size: 24px;
-                color: $white-color;
-                width: 100%;
-                padding: 44px 0;
-                text-transform: uppercase;
-                cursor: pointer;
-                font-family: $font-bold;
-                line-height: 1.2;
-                font-weight: 900;
-                letter-spacing: 0.1em;
-                background-image: url(../img/awesome/btn_pseudo.svg);
-                background-repeat: no-repeat;
-                background-position: top -6px right;
-                @include transition;
-                &:hover {
-                    background-color: $red-color-hover;
-                }
-                @include from-to($tablet, $laptop) {
-                    padding: 23px 0 28px;
-                    background-position: top -6px right 0;
-                    font-size: 20px;
-                }
-                @include to($mobile) {
-                    font-size: 18px;
-                    padding: 25px 0 30px;
-                    background-position: top -6px right -60%;
-                }
-            }
-        }
-        &_btn_center {
-            img {
-                display: block;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-        &_btn_bottom {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 16px 0 12px;
-            position: relative;
-            background-color: $white-color;
-            // @include from-to($tablet, $laptop) {
-            //     padding: 10px 0;
-            // }
-            @include from-to($tablet, $laptop) {
-                padding: 8px 0;
-            }
-            @include to($mobile) {
-                padding: 10px 0 8px;
-            }
-
-            picture {
-                margin: 10px 0 0px -5px;
-            }
-        }
-        &_btn__pseudo_left,
-        &_btn__pseudo_right {
+    }
+    &__mouse {
+        position: absolute;
+        top: 0;
+        right: 50%;
+        transform: translateX(-50%);
+        span {
             position: absolute;
-            z-index: -1;
-        }
-        &_btn__pseudo_left {
-            left: -50px;
-            bottom: -45px;
-            @include from-to($tablet, $laptop) {
-                bottom: -15px;
-            }
-            @include to($mobile) {
-                bottom: -22px;
-            }
-        }
-        &_btn__pseudo_right {
-            right: -60px;
-            bottom: -70px;
-            @include from-to($tablet, $laptop) {
-                bottom: -40px;
-            }
-            @include to($mobile) {
-                right: -105px;
-                bottom: -90px;
-                img {
-                    transform: scale(0.65);
-                }
-            }
-        }
-        &_title {
-            font-size: 48px;
-            @include from-to($tablet, $laptop) {
-                font-size: 42px;
-                letter-spacing: 2.2px;
-            }
-            @include to($tablet) {
-                font-size: 28px;
-            }
-        }
-        &_awards_items {
-            margin-top: 50px;
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-gap: 5%;
-            // @include from-to($tablet, $laptop) {
-            //     grid-gap: 25px;
-            // }
-            @include from-to($tablet, $laptop) {
-                grid-gap: 10px;
-                margin-top: 8px;
-            }
-            @include to($mobile) {
-                grid-gap: 10px;
-                margin-top: 8px;
-            }
-            li {
-                background-color: grey;
-                width: 120px;
-                height: 120px;
+            top: 0px;
+            right: -6px;
+            display: block;
+            border: 2px solid $black_default-color;
+            width: 16px;
+            height: 26px;
+            border-radius: 10px;
+            background-color: $white-color;
+            // animation: mouse 1.7s infinite ease-in-out;
+            z-index: 1;
+            &::after {
+                content: "";
                 display: block;
-                @media (max-width: 1900px) {
-                    width: 87px;
-                    height: 87px;
-                }
-                @include from-to($tablet, $laptop) {
-                    width: 87px;
-                    height: 87px;
-                }
-                @include to($tablet) {
-                    width: 56px;
-                    height: 56px;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 3px;
+                width: 3px;
+                height: 6px;
+                background-color: $black_default-color;
+            }
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            top: 26px;
+            right: -26px;
+            width: 55px;
+            height: 3px;
+            transform: rotate(-90deg);
+            background: linear-gradient(
+                90deg,
+                rgba(54, 53, 53, 1) 0%,
+                rgba(124, 123, 123, 1) 49%,
+                rgba(198, 195, 195, 1) 100%
+            );
+        }
+    }
+    &__menu {
+        margin-left: 127px;
+        li {
+            margin-bottom: 6px;
+        }
+        a {
+            font-size: 20px;
+            color: $about-white-text;
+            font-family: $font-Geometria-bold;
+            @include transition;
+            position: relative;
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: -115px;
+                top: 10px;
+                height: 2px;
+                width: 0;
+                background-color: $red-color;
+                @include transition;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                color: $red-color-hover;
+                &::before {
+                    width: 100px;
                 }
             }
         }
     }
-}
-
-.town__name {
-    color: $black_default-color;
-    position: relative;
-    display: inline-block;
-    text-align: center;
-    font-size: 45px;
-    letter-spacing: 2px;
-    // @include from-to($tablet, $laptop) {
-    //     font-size: 28px;
-    // }
-    @include from-to($tablet, $laptop) {
-        font-size: 32px;
-    }
-    @include to($mobile) {
-        font-size: 25px;
+    &__pdeudo-bg {
+        position: absolute;
+        top: 66%;
+        right: -50px;
+        transform: rotate(90deg) translateX(-50%);
+        z-index: 0;
+        span {
+            color: $about-white-pseudo-text;
+            font-size: 250px;
+            font-family: $font-bold;
+        }
     }
 }
-
-#supported__counter {
-    font-family: $font-bold;
-    font-size: 64px;
-    margin-bottom: 58px;
-    display: inline-block;
-    letter-spacing: 1.5px;
-    @include from-to($tablet, $laptop) {
-        font-size: 48px;
-        margin-bottom: 15px;
+@keyframes mouse {
+    0% {
+        top: 0;
     }
-    @include to($mobile) {
-        font-size: 32px;
-        margin-bottom: 15px;
+    100% {
+        top: 60px;
     }
 }

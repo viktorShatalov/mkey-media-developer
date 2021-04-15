@@ -1,27 +1,45 @@
 @font-face {
-    font-family: "Alegreya";
-    src: url("../fonts/Alegreya/Alegreya-Regular.ttf") format("ttf");
-    src: url("../fonts/Alegreya/Alegreya-Regular.woff") format("woff");
-    src: url("../fonts/Alegreya/Alegreya-Regular.woff2") format("woff2");
+    font-family: "GothamPro";
+    src: url("../fonts/GothamPro/GothamPro.ttf") format("ttf");
+    src: url("../fonts/GothamPro/GothamPro.woff") format("woff");
+    src: url("../fonts/GothamPro/GothamPro.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "Alegreya-Bold";
-    src: url("../fonts/Alegreya/Alegreya-Bold.ttf") format("ttf");
-    src: url("../fonts/Alegreya/Alegreya-Bold.woff") format("woff");
-    src: url("../fonts/Alegreya/Alegreya-Bold.woff2") format("woff2");
+    font-family: "GothamPro-Bold";
+    src: url("../fonts/GothamPro/GothamPro-bold.ttf") format("ttf");
+    src: url("../fonts/GothamPro/GothamPro-bold.woff") format("woff");
+    src: url("../fonts/GothamPro/GothamPro-bold.woff2") format("woff2");
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Geometria-Medium";
+    src: url("../fonts/Geometria/Geometria-Medium.ttf") format("ttf");
+    src: url("../fonts/Geometria/Geometria-Medium.woff") format("woff");
+    src: url("../fonts/Geometria/Geometria-Medium.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
-    font-family: "Alegreya-Black";
-    src: url("../fonts/Alegreya/Alegreya-Black.ttf") format("ttf");
-    src: url("../fonts/Alegreya/Alegreya-Black.woff") format("woff");
-    src: url("../fonts/Alegreya/Alegreya-Black.woff2") format("woff2");
+    font-family: "Geometria";
+    src: url("../fonts/Geometria/Geometria.ttf") format("ttf");
+    src: url("../fonts/Geometria/Geometria.woff") format("woff");
+    src: url("../fonts/Geometria/Geometria.woff2") format("woff2");
     font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Geometria-Bold";
+    src: url("../fonts/Geometria/Geometria-Bold.ttf") format("ttf");
+    src: url("../fonts/Geometria/Geometria-Bold.woff") format("woff");
+    src: url("../fonts/Geometria/Geometria-Bold.woff2") format("woff2");
+    font-weight: bold;
     font-style: normal;
     font-display: swap;
 }

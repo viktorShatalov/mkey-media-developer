@@ -1,15 +1,23 @@
 
 jQuery(document).ready(function ($) {
-   
 
-    // slider
-    // $('.js-flipster').flipster({
-    //     style: 'carousel',
-    //     spacing: -0.5,
-    //     nav: true,
-    //     buttons: true,
-    //     scrollwheel: false,
-    // });
+    // header burger
+    $(".header__burger").on("click", function () {
+        let burger = $(this)
+        let headerMenu = $(".header__menu")
+        burger.toggleClass('active')
+        headerMenu.toggleClass("active")
+    })
+
+    // sound change
+    $(".header__bottom-text").on("click", function () {
+        let text = $(".text-chenge")
+        let bottomSpan = $(".header__bottom-line span")
+        text.html() == "Off"
+            ? (text.html("On"), bottomSpan.addClass("active"))
+            : (text.html("Off"), bottomSpan.removeClass("active"))
+
+    })
 
     // modal
 
@@ -149,6 +157,9 @@ jQuery(document).ready(function ($) {
         }
     }
 
+
 })
+
+
 
 
