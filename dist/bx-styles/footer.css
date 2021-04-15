@@ -166,26 +166,26 @@
   text-align: center;
   text-transform: uppercase;
   font-size: 18px;
-  font-family: Alegreya-Bold;
+  font-family: GothamPro-Bold;
   letter-spacing: .8px;
   color: #fff;
-  background-color: #d80e15;
+  background-color: #cd1111;
   border-radius: 4px;
   cursor: pointer;
   transition: .3s ease-in-out
 }
 .form__control_btn:hover {
-  background-color: #c0171c
+  background-color: #cd1111
 }
 .form__control_valid.error,
 .form__control_valid.valid {
   position: absolute;
   font-size: 14px;
-  border: 1px solid #d80e15;
+  border: 1px solid #cd1111;
   padding: 3px;
   left: 0;
   bottom: -25px;
-  color: #d80e15;
+  color: #cd1111;
   display: block;
   width: 100%;
   text-align: center

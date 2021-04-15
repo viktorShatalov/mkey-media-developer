@@ -813,6 +813,7 @@ a {
   height: 26px;
   border-radius: 10px;
   background-color: white;
+  animation: mouse 1.7s infinite ease-in-out;
   z-index: 1;
 }
 
