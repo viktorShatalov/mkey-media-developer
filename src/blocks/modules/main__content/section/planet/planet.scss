@@ -1,0 +1,40 @@
+@import "main-bx";
+
+.planet {
+    // padding: 440px 0 433px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+    &__center {
+        display: block;
+        background-color: $white-color;
+        width: 45px;
+        height: 9px;
+    }
+    &__right {
+        &-text {
+            display: inline-block;
+            font-size: 72px;
+            font-family: $font-bold;
+            color: $white-color;
+            margin-bottom: 30px;
+        }
+        &-pseudo {
+            display: flex;
+            align-items: center;
+            span {
+                display: block;
+                background-color: $red-color;
+                width: 45px;
+                height: 6px;
+                margin-right: 10px;
+            }
+        }
+    }
+}

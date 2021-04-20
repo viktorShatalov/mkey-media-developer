@@ -1,0 +1,118 @@
+@import "main-bx";
+
+.benefits {
+    padding-bottom: 140px;
+    background-color: $white-color;
+    &__top {
+        background-position: top left;
+        background-repeat: no-repeat;
+        background-size: auto;
+    }
+    &__heading {
+        position: relative;
+        padding-top: 220px;
+        margin-bottom: 70px;
+        h2 {
+            position: relative;
+            font-size: 48px;
+            color: $black_default-color;
+            text-transform: uppercase;
+            text-align: end;
+            padding: 0 60px 0 0px;
+            span {
+                color: $red-color;
+            }
+        }
+        &-bg {
+            position: absolute;
+            bottom: -25px;
+            right: -110px;
+            z-index: 0;
+            font-size: 150px;
+            font-family: $font-bold;
+            color: $about-white-pseudo-text;
+            text-transform: uppercase;
+        }
+    }
+    .container {
+        max-width: 1320px;
+    }
+    &__content {
+        &.top__content {
+            .container {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        &-left {
+            .video {
+                position: relative;
+                bottom: -110px;
+                picture {
+                    display: block;
+                }
+            }
+            .video__btn {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                cursor: pointer;
+                img,
+                picture {
+                    width: 80px;
+                    height: 80px;
+                }
+                &::after {
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    content: "";
+                    background-color: $white-color;
+                    opacity: 0.3;
+                    border-radius: 50%;
+                    transform: scale(1.44);
+                }
+            }
+        }
+        &-right {
+            max-width: 425px;
+            h3 {
+                color: $red-color;
+                font-size: 30px;
+                margin-bottom: 25px;
+            }
+            p {
+                color: $black_default-color;
+            }
+        }
+    }
+    &__bottom {
+        background-position: top right;
+        background-repeat: no-repeat;
+        background-size: auto;
+        padding-top: 215px;
+        ul {
+            width: 100%;
+            max-width: 525px;
+        }
+        li {
+            margin-bottom: 65px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        h3 {
+            color: $red-color;
+            font-size: 30px;
+            margin-bottom: 25px;
+        }
+        p {
+            color: $black_default-color;
+            max-width: 470px;
+        }
+    }
+}

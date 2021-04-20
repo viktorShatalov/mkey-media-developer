@@ -4,13 +4,14 @@
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
-    min-height: 1080px;
+    height: 100vh;
     padding: 40px 115px 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
     z-index: 2;
+    overflow-x: hidden;
     &::before,
     &::after {
         content: "";
@@ -150,17 +151,116 @@
         }
     }
     &__menu {
+        display: flex;
         position: absolute;
         width: 100%;
         height: 100%;
         left: 0;
         top: 0;
-        background-color: $headre_menu-bg;
+        background-color: $header_menu-bg;
         z-index: 5;
         transform: translateX(100%);
         @include transition;
         &.active {
             transform: translateX(0);
+        }
+        &-left {
+            flex: 0 0 50%;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 1px;
+                height: 100%;
+                background-color: $white-color;
+                opacity: 0.25;
+            }
+        }
+        &_navigation {
+            flex: 0 0 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            a {
+                display: inline-block;
+                font-size: 48px;
+                color: $white-color;
+                margin-bottom: 45px;
+                width: 100%;
+                min-width: 270px;
+                @include transition;
+                &:hover {
+                    color: $red-color-hover;
+                    font-family: $font-bold;
+                }
+            }
+        }
+        &-right {
+            background-color: $red-color;
+            width: 115px;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}
+.glitch {
+    text-transform: uppercase;
+    color: $black_default-color;
+    font-size: 350px;
+    font-family: $font-bold;
+    line-height: 0.75;
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%) scale3d(1, 1, 1);
+    left: 90px;
+    z-index: 1;
+    &::before,
+    &::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        overflow: hidden;
+        color: $black_default-color;
+        clip: rect(0, 100px, 0, 0);
+    }
+    &.active {
+        &::before,
+        &::after {
+            animation: glitch-effect 1.5s infinite linear alternate;
+        }
+    }
+
+    &::before {
+        left: 7px;
+        text-shadow: 1px 0 $white-color;
+    }
+
+    &::after {
+        left: 3px;
+        text-shadow: -1px 0 $red-color-hover;
+    }
+    &:hover {
+        &::before {
+            animation: glitch-effect 3s infinite linear alternate;
+        }
+
+        &::after {
+            animation: glitch-effect 2s infinite linear alternate;
+        }
+    }
+}
+$steps: 20;
+@keyframes glitch-effect {
+    @for $i from 0 through $steps {
+        #{percentage($i*(1/$steps))} {
+            clip: rect(random(260) + px, 1070px, random(260) + px, 0);
         }
     }
 }
@@ -181,5 +281,12 @@
     }
     100% {
         height: 5px;
+    }
+}
+
+#pp-nav {
+    display: none;
+    &.active {
+        display: block;
     }
 }

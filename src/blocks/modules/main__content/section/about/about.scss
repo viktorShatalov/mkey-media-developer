@@ -2,10 +2,12 @@
 
 .about {
     position: relative;
-    padding: 435px 60px 123px;
+    padding: 0 60px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
     h2 {
         position: relative;
         color: $about-white-text;
@@ -36,35 +38,35 @@
             color: rgb(26, 26, 26);
         }
     }
-    &.show {
-        h2 {
-            margin-bottom: 232px;
-        }
-    }
-    &.do-not {
-        padding: 480px 60px 122px;
-        h2 {
-            margin-bottom: 284px;
-        }
-    }
-    &.recognize {
-        padding: 480px 60px 122px;
-        h2 {
-            margin-bottom: 295px;
-        }
-    }
-    &.love {
-        padding: 480px 60px 122px;
-        h2 {
-            margin-bottom: 290px;
-        }
-    }
-    &.reach {
-        padding: 487px 60px 122px;
-        h2 {
-            margin-bottom: 279px;
-        }
-    }
+    // &.show {
+    //     h2 {
+    //         margin-bottom: 232px;
+    //     }
+    // }
+    // &.do-not {
+    //     padding: 480px 60px 122px;
+    //     h2 {
+    //         margin-bottom: 284px;
+    //     }
+    // }
+    // &.recognize {
+    //     padding: 480px 60px 122px;
+    //     h2 {
+    //         margin-bottom: 295px;
+    //     }
+    // }
+    // &.love {
+    //     padding: 480px 60px 122px;
+    //     h2 {
+    //         margin-bottom: 290px;
+    //     }
+    // }
+    // &.reach {
+    //     padding: 487px 60px 122px;
+    //     h2 {
+    //         margin-bottom: 279px;
+    //     }
+    // }
     &__line {
         position: absolute;
         z-index: 1;
@@ -85,14 +87,14 @@
         span {
             position: absolute;
             top: 0px;
-            right: -6px;
+            right: -6.5px;
             display: block;
             border: 2px solid $black_default-color;
             width: 16px;
             height: 26px;
             border-radius: 10px;
             background-color: $white-color;
-            // animation: mouse 1.7s infinite ease-in-out;
+            animation: mouse 1.7s infinite ease-in-out;
             z-index: 1;
             &::after {
                 content: "";
@@ -124,7 +126,10 @@
         }
     }
     &__menu {
-        margin-left: 127px;
+        // margin-left: 127px;
+        position: absolute;
+        left: 13%;
+        bottom: 60px;
         li {
             margin-bottom: 6px;
         }

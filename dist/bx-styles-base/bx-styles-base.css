@@ -9,9 +9,9 @@
 }
 @font-face {
   font-family: GothamPro-Bold;
-  src: url(../fonts/GothamPro/GothamPro-bold.ttf) format("ttf");
-  src: url(../fonts/GothamPro/GothamPro-bold.woff) format("woff");
-  src: url(../fonts/GothamPro/GothamPro-bold.woff2) format("woff2");
+  src: url(../fonts/GothamPro/GothamPro-Bold.ttf) format("ttf");
+  src: url(../fonts/GothamPro/GothamPro-Bold.woff) format("woff");
+  src: url(../fonts/GothamPro/GothamPro-Bold.woff2) format("woff2");
   font-weight: 700;
   font-style: normal;
   font-display: swap
@@ -65,19 +65,36 @@ ul {
 }
 body {
   font-family: GothamPro;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
   overflow-x: hidden;
   width: 100%;
   max-width: 100%;
-  background: #fff;
+  color: #fff;
   margin: 0
+}
+.container {
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: GothamPro-Bold
 }
 ul {
   list-style-type: none
 }
 ul li {
   padding-left: 0
+}
+p {
+  margin: 0
 }
 a {
   text-decoration: none;

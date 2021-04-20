@@ -117,18 +117,74 @@
 
 /* WEBPACK VAR INJECTION */(function(jQuery) {jQuery(document).ready(function ($) {
   // header burger
-  $(".header__burger").on("click", function () {
+  $("header .burger-js").on("click", function () {
     var burger = $(this);
     var headerMenu = $(".header__menu");
     burger.toggleClass('active');
     headerMenu.toggleClass("active");
+  });
+  $("footer .burger-js").on("click", function () {
+    var burger = $(this);
+    var footerMenu = $(".footer__menu");
+    burger.toggleClass('active');
+    footerMenu.toggleClass("active");
+  }); // footer__form
+
+  $(".btn__form-js").on("click", function () {
+    $(this).addClass("active");
+    $(".footer__form-js").addClass("active");
+  });
+  $(".form__request-menu-close-js").on("click", function () {
+    $(".btn__form-js").removeClass("active");
+    $(".footer__form-js").removeClass("active");
   }); // sound change
 
-  $(".header__bottom-text").on("click", function () {
+  $(".sound-js").on("click", function () {
     var text = $(".text-chenge");
     var bottomSpan = $(".header__bottom-line span");
     text.html() == "Off" ? (text.html("On"), bottomSpan.addClass("active")) : (text.html("Off"), bottomSpan.removeClass("active"));
-  }); // modal
+  }); // scroll 
+
+  $(".header__scroll-js").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1000);
+  });
+  $(".about__scroll-js").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 2500);
+  }); // development__content
+
+  function tab(el) {
+    var tabLink = el;
+    tabLink.forEach(function (item) {
+      item.addEventListener("mouseover", selsectTabLink);
+    });
+
+    function selsectTabLink() {
+      tabLink.forEach(function (item) {
+        item.classList.remove("active");
+      });
+      this.classList.add("active");
+    }
+  }
+
+  tab(document.querySelectorAll(".development__top-js ul li"));
+  tab(document.querySelectorAll(".development_bottom-js ul li")); // glitch
+
+  setInterval(function () {
+    $('.glitch').addClass("active");
+    setTimeout(function () {
+      $('.glitch').removeClass("active");
+    }, 1000);
+  }, 5000); // modal
 
   function modal() {
     var openModalButtons = document.querySelectorAll("[data-modal-target]");
@@ -162,66 +218,22 @@
     }
   }
 
-  modal(); // js_mask
-  // const isComplate = function () {
-  //     this.css({
-  //         "background-color": "white",
-  //         "background-image": "url(./img/awesome/checked_valid.png)",
-  //         "background-repeat": "no-repeat",
-  //         "background-position": "center right 15px"
-  //     });
-  // }
-  // js-mask_date
-  // $(".js-mask_date").mask("99/99/9999", {
-  //     completed: isComplate
-  // });
-  // js-mask_tel
-  // $.mask.definitions['N'] = '[/9|9/]';
-  // $(".js-mask_tel").mask("+7 N99 999-99-99", {
-  //     completed: isComplate
-  // });
-  // js-mask_email
-  // const pattern = /^[a-z0-9_-]+@[a-z0-9-]+\.[a-z]{2,6}$/i;
-  // const mail = $('.js-mask_email');
-  // mail.blur(function () {
-  //     if (mail.val() != '') {
-  //         if (mail.val().search(pattern) == 0) {
-  //             mail.addClass("valid")
-  //             $('.form__control_valid').text('');
-  //             $('.form__control_valid').removeClass('valid');
-  //             $('.form__control_valid').removeClass('error');
-  //         } else {
-  //             $('.form__control_valid').text('Email введён не верно');
-  //             $('.form__control_valid').addClass('error');
-  //         }
-  //     } else {
-  //         $('.form__control_valid').text('Поле e-mail не должно быть пустым!');
-  //         $('.form__control_valid').addClass('error');
-  //     }
-  // });
-  // js-mask_text
-  // const maskText = $(".js-mask_text")
-  // maskText.each(function () {
-  //     $(this).blur(function () {
-  //         if ($(this).val() != "") {
-  //             $(this).addClass("valid")
-  //         }
-  //         else {
-  //             maskText.removeClass("valid")
-  //         }
-  //     })
-  // })
-  // js-select
-  // const select = document.querySelector('.js-select');
-  // const choices = new Choices(select, {
-  //     searchEnabled: false,
-  //     itemSelectText: '',
-  //     classNames: {
-  //         containerInner: 'form__control_input',
-  //         itemSelectable: 'choices__item--selectable',
-  //     }
-  // });
-  // webp
+  modal(); // input file
+
+  $('input[type="file"]').change(function () {
+    var value = $("input[type='file']").val();
+    var deleteBtn = $(".form__file_pseudo-delete");
+    var line = $(".form__file_pseudo-line");
+    var textValue = $('.form__file_pseudo-text');
+    textValue.text(value);
+    deleteBtn.addClass("active");
+    line.addClass("active");
+    deleteBtn.on("click", function () {
+      textValue.text("Прикрепить файл");
+      deleteBtn.removeClass("active");
+      line.removeClass("active");
+    });
+  }); // webp
   // Проверяем, можно ли использовать Webp формат
 
   function canUseWebp() {
@@ -253,7 +265,28 @@
 
       imagesWebp[_i].style.backgroundImage = 'url(' + imageWebp + ')';
     }
-  }
+  } // pagepiling
+
+
+  $('#pagepiling').pagepiling({
+    anchors: ['header', 'second__block', 'do-not', 'recognize', 'love', 'reach', 'planet', 'founder', 'about__product', 'development', 'personalization', 'benefits', 'about__us', 'footer'],
+    navigation: {
+      'position': 'right',
+      'tooltips': [],
+      "bulletsColor": "#e2e3e4",
+      "textColor": "#e2e3e4"
+    },
+    onLeave: function onLeave(index, nextIndex, direction) {
+      if (nextIndex == 1) {
+        $('#pp-nav').removeClass('active');
+      } else {
+        $('#pp-nav').addClass('active');
+      } // console.log(index)
+      // console.log(nextIndex)
+      // console.log(direction)
+
+    }
+  });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
 

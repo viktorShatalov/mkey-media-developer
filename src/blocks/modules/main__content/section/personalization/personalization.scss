@@ -1,0 +1,38 @@
+@import "main-bx";
+
+.personalization {
+    background-color: $black_default-color;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    padding: 485px 0 320px;
+    position: relative;
+    h2 {
+        text-align: center;
+        color: $white-color;
+        font-size: 72px;
+        text-transform: uppercase;
+        position: relative;
+        margin-bottom: 60px;
+        span {
+            color: $red-color;
+        }
+    }
+    p {
+        text-align: center;
+    }
+    &-content {
+        position: relative;
+    }
+    &-bg {
+        font-size: 150px;
+        color: rgb(76, 76, 76);
+        font-family: $font-bold;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%,-75px);
+        z-index: 0;
+        opacity: 0.5;
+        text-transform: uppercase;
+    }
+}

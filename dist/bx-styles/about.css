@@ -1,9 +1,11 @@
 .about {
   position: relative;
-  padding: 435px 60px 123px;
+  padding: 0 60px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: center;
+  align-items: center;
+  height: 100vh
 }
 .about h2 {
   position: relative;
@@ -35,33 +37,6 @@
 .about.black-bg .about__pdeudo-bg span {
   color: #1a1a1a
 }
-.about.show h2 {
-  margin-bottom: 232px
-}
-.about.do-not {
-  padding: 480px 60px 122px
-}
-.about.do-not h2 {
-  margin-bottom: 284px
-}
-.about.recognize {
-  padding: 480px 60px 122px
-}
-.about.recognize h2 {
-  margin-bottom: 295px
-}
-.about.love {
-  padding: 480px 60px 122px
-}
-.about.love h2 {
-  margin-bottom: 290px
-}
-.about.reach {
-  padding: 487px 60px 122px
-}
-.about.reach h2 {
-  margin-bottom: 279px
-}
 .about__line {
   position: absolute;
   z-index: 1
@@ -83,7 +58,7 @@
 .about__mouse span {
   position: absolute;
   top: 0;
-  right: -6px;
+  right: -6.5px;
   display: block;
   border: 2px solid #000;
   width: 16px;
@@ -117,7 +92,9 @@
   background: linear-gradient(90deg,#363535 0,#7c7b7b 49%,#c6c3c3 100%)
 }
 .about__menu {
-  margin-left: 127px
+  position: absolute;
+  left: 13%;
+  bottom: 60px
 }
 .about__menu li {
   margin-bottom: 6px
@@ -137,7 +114,7 @@
   top: 10px;
   height: 2px;
   width: 0;
-  background-color: #cd1111;
+  background-color: #c00;
   transition: .3s ease-in-out
 }
 .about__menu a:active,

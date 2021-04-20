@@ -1,0 +1,80 @@
+@import "main-bx";
+
+.founder {
+    padding: 250px 0 217px;
+    background-color: $white-color;
+    &__heading {
+        position: relative;
+        margin-bottom: 78px;
+    }
+    &__bg {
+        position: absolute;
+        left: -12px;
+        bottom: -24px;
+        z-index: 0;
+        font-size: 150px;
+        font-family: $font-bold;
+        color: $about-white-pseudo-text;
+        text-transform: uppercase;
+    }
+    h2 {
+        position: relative;
+        font-size: 48px;
+        color: $black_default-color;
+    }
+    &__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        &-left {
+            picture {
+                position: relative;
+                display: block;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    width: 63px;
+                    height: 63px;
+                    bottom: -30px;
+                    right: -30px;
+                    background-color: $red-color;
+                }
+                &::before {
+                    content: "";
+                    position: absolute;
+                    top: 90px;
+                    right: 0;
+                    border: 18px solid transparent;
+                    border-right: 18px solid $white-color;
+                }
+            }
+        }
+        &-right {
+            flex: 0 0 50%;
+            color: rgb(25, 25, 25);
+            .name {
+                font-family: $font-bold;
+                margin-bottom: 35px;
+                span {
+                    display: block;
+                }
+                &__ru {
+                    font-size: 30px;
+                    color: $red-color;
+                    margin-bottom: 20px;
+                }
+                &__en {
+                    font-size: 24px;
+                }
+            }
+            .text {
+                font-family: $font-Geometria;
+                p {
+                    &:nth-child(1) {
+                        margin-bottom: 35px;
+                    }
+                }
+            }
+        }
+    }
+}

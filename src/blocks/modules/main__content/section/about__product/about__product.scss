@@ -1,0 +1,31 @@
+@import "main-bx";
+
+.about__product {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 485px 0 510px;
+    position: relative;
+    h2 {
+        text-align: center;
+        color: $white-color;
+        font-size: 72px;
+        text-transform: uppercase;
+        position: relative;
+    }
+    &-content {
+        position: relative;
+    }
+    &-bg {
+        font-size: 150px;
+        color: rgb(76, 76, 76);
+        font-family: $font-bold;
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, -75px);
+        z-index: 0;
+        opacity: 0.5;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+}

@@ -21,18 +21,19 @@ ul {
         box-sizing: border-box;
     }
 }
+:root {
+    // scroll-behavior: smooth;
+}
 
 body {
     font-family: $font-normal;
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.2;
-    // color: $default-font-color;
     overflow-x: hidden;
     width: 100%;
     max-width: 100%;
     margin: 0 auto;
-    background: white;
-    // background: $bg-color;
+    color: $white-color;
     @include to($tablet) {
         font-size: 16px;
     }
@@ -40,12 +41,29 @@ body {
         font-size: 14px;
     }
 }
+.container {
+    max-width: 1170px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font-bold;
+}
 
 ul {
     list-style-type: none;
     li {
         padding-left: 0;
     }
+}
+p {
+    margin: 0;
 }
 a {
     text-decoration: none;

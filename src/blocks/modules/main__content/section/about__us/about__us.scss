@@ -1,0 +1,50 @@
+@import "main-bx";
+
+.about__us {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 140px;
+    color: $white-color;
+    .container {
+        max-width: 1320px;
+    }
+    &__heading {
+        position: relative;
+        padding-top: 200px;
+        margin-bottom: 75px;
+        h2 {
+            position: relative;
+            font-size: 48px;
+            text-transform: uppercase;
+        }
+        &-bg {
+            position: absolute;
+            bottom: -25px;
+            left: -10px;
+            z-index: 0;
+            font-size: 150px;
+            font-family: $font-bold;
+            color: rgba(32, 32, 32, 0.102);
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+    }
+    ul {
+        width: 100%;
+        max-width: 525px;
+    }
+    li {
+        margin-bottom: 70px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    h3 {
+        font-size: 30px;
+        margin-bottom: 25px;
+    }
+    p {
+        max-width: 470px;
+    }
+}

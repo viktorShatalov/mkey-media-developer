@@ -1,0 +1,124 @@
+@import "main-bx";
+
+.development {
+    padding: 0 0 150px;
+    background-color: $white-color;
+    &__heading-top,
+    &__heading-bottom {
+        position: relative;
+        padding-bottom: 87px;
+        padding-top: 220px;
+        max-width: 1500px;
+        border-right: 1px solid $border;
+    }
+
+    .top__bg,
+    .bottom__bg {
+        position: absolute;
+        left: 170px;
+        bottom: 120px;
+        z-index: 0;
+        font-size: 150px;
+        font-family: $font-bold;
+        color: $about-white-pseudo-text;
+        text-transform: uppercase;
+    }
+    .bottom__bg {
+        font-size: 130px;
+        left: 45px;
+        bottom: 125px;
+    }
+    h2 {
+        position: relative;
+        font-size: 48px;
+        color: $black_default-color;
+        text-transform: uppercase;
+        padding-left: 170px;
+        span {
+            color: $red-color;
+        }
+    }
+    &__heading-bottom {
+        border-right: 0px solid $border;
+        border-left: 1px solid $border;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 165px;
+        h2 {
+            padding-left: 0;
+            padding-right: 255px;
+        }
+    }
+    p {
+        color: $black_default-color;
+    }
+    &__contentTop,
+    &__contentBottom {
+        position: relative;
+        margin-bottom: 75px;
+        &-motobikeImg {
+            position: absolute;
+            left: 80px;
+            top: 240px;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1500px;
+        }
+        &-left {
+            flex: 0 0 50%;
+            padding-right: 165px;
+            padding-left: 170px;
+            margin: 0 auto;
+            letter-spacing: -0.45px;
+        }
+        &-right {
+            flex: 0 0 50%;
+            li {
+                padding: 43px 150px 40px 175px;
+                border: 1px solid $border;
+                @include transition;
+                h3 {
+                    font-family: $font-bold;
+                    color: $red-color;
+                    margin-bottom: 24px;
+                    font-size: 30px;
+                    @include transition;
+                }
+                p {
+                    font-family: $font-Geometria;
+                    @include transition;
+                }
+                &.active {
+                    background-color: $red-color;
+                    border: 1px solid $red-color;
+                    p,
+                    h3 {
+                        color: $white-color;
+                    }
+                }
+            }
+        }
+    }
+    &__contentBottom {
+        .container {
+            flex-direction: row-reverse;
+        }
+        &-left {
+            padding-right: 0;
+            p {
+                max-width: 415px;
+            }
+        }
+        li {
+            padding: 43px 140px 40px;
+            &:nth-child(3){
+                padding: 43px 170px 40px 140px; 
+            }
+        }
+        &-pistole {
+            margin-top: 165px;
+        }
+    }
+}
